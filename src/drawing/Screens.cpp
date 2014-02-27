@@ -7,6 +7,8 @@
 //
 
 #include "Screens.h"
+#include <iostream>
+#include <string>
 
 Screens::Screens(GLfloat width, GLfloat height) {
     palette::initColours();
