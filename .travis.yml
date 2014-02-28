@@ -4,4 +4,10 @@ before_install:
   - sudo apt-get install xorg-dev
   - sudo apt-get install libglu1-mesa-dev
   - sudo apt-get install cmake
-
+install:
+# libstdc++-4.8-dev
+    - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+# clang++-3.2
+    - sudo add-apt-repository --yes ppa:h-rayflood/llvm
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install libstdc++-4.8-dev clang-3.2
