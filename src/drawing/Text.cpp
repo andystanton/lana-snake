@@ -8,16 +8,18 @@
 
 #include "Text.h"
 
+Alphabet * Text::alphabet;
+
 void Text::init() {
-    alphabet::initAlphabet();
+    alphabet = Alphabet::getInstance();
 }
 
 void Text::drawCharacter(char character, GLint pixelSize) {
-    float resetVal = -alphabet::CHARACTER_HEIGHT * pixelSize;
-    if (alphabet::alphabet[character]) {
-        bool** charValues = alphabet::alphabet[character]->getPixels();
-        for (int i=0; i<alphabet::CHARACTER_WIDTH; i++) {
-            for (int j=0; j<alphabet::CHARACTER_HEIGHT; j++) {
+    float resetVal = -Alphabet::CHARACTER_HEIGHT * pixelSize;
+    if (alphabet->getChar(character)) {
+        bool** charValues = alphabet->getChar(character)->getPixels();
+        for (int i=0; i<Alphabet::CHARACTER_WIDTH; i++) {
+            for (int j=0; j<Alphabet::CHARACTER_HEIGHT; j++) {
                 if (charValues[i][j]) {
                     Primitive::drawSquare(pixelSize);
                 }
@@ -40,8 +42,8 @@ void Text::writeText(string text) {
 }
 
 void Text::writeCentredParagraph(string text, GLfloat width, GLfloat height, GLint pixelSize) {
-    GLint lettersWidth = (GLint) (pixelSize * (text.size() * alphabet::CHARACTER_WIDTH + text.size() - 1));
-    glTranslatef((width-lettersWidth)/2, height - (alphabet::CHARACTER_HEIGHT * Primitive::DEFAULT_PIXEL_SIZE/2), 0.0f);
+    GLint lettersWidth = (GLint) (pixelSize * (text.size() * Alphabet::CHARACTER_WIDTH + text.size() - 1));
+    glTranslatef((width-lettersWidth)/2, height - (Alphabet::CHARACTER_HEIGHT * Primitive::DEFAULT_PIXEL_SIZE/2), 0.0f);
     Text::writeText(text, pixelSize);
 }
 

@@ -4,6 +4,7 @@ Vec2d* Snake::BASE_DIR = new Vec2d(1, 0);
 Logger* Snake::log = Logger::getLogger("Snake");
 
 Snake::Snake(Vec2d* coords): Entity(coords) {
+    palette = Palette::getInstance();
     resetSnake();
 }
 
@@ -75,15 +76,14 @@ bool Snake::changeDirection(Vec2d* direction) {
 }
 
 void Snake::resetSnake() {
-    palette::initColours();
     segments = new vector<Segment*>();
     direction = new Vec2d(Vec2d::RIGHT);
     directionQueue.clear();
     live = false;
     
-    segments->push_back(new Segment(new Vec2d(0,0), palette::getPink()));
+    segments->push_back(new Segment(new Vec2d(0,0), palette->getPink()));
     for (int i=1; i<MIN_LENGTH; i++) {
-        Segment* newSeg = new Segment(new Vec2d(BASE_DIR), palette::getPink());
+        Segment* newSeg = new Segment(new Vec2d(BASE_DIR), palette->getPink());
         segments->push_back(newSeg);
     }
 }

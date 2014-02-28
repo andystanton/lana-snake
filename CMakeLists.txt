@@ -27,6 +27,8 @@ add_executable(
             src/drawing/Primitive.cpp
             src/drawing/Screens.cpp
             src/drawing/Text.cpp
+            src/drawing/Alphabet.cpp
+            src/drawing/Palette.cpp
             src/model/entity/Entity.cpp
             src/model/entity/Pickup.cpp
             src/model/entity/Segment.cpp

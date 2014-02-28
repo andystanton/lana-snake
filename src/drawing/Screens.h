@@ -11,11 +11,12 @@
 
 #include "GLFW/glfw3.h"
 #include "Text.h"
-#include "../static/palette.h"
-#include "../static/alphabet.h"
+#include "../drawing/Palette.h"
+#include "../drawing/Alphabet.h"
 
 class Screens {
 private:
+    Palette * palette;
     GLfloat width, height;
     void drawParagraph(string text, GLfloat height, GLfloat pixelSize);
     GLfloat linebreak(GLfloat height, GLfloat pixelSize);

@@ -18,7 +18,7 @@
 #include "drawing/Gameplay.h"
 #include "drawing/Screens.h"
 
-#include "static/palette.h"
+#include "drawing/Palette.h"
 
 using namespace std;
 
@@ -49,6 +49,7 @@ Snake* snake;
 Pickup* randomPickup;
 World* world;
 Screens* screens;
+Palette * palette;
 
 static void spawnPickup() {
     Vec2d* pickupCoords;
@@ -60,7 +61,7 @@ static void spawnPickup() {
             mainLog->info("Attempted to spawn pickup under snake at " + *pickupCoords->toString());
         }
     }
-    randomPickup = new Pickup(pickupCoords, palette::getRandomColour());
+    randomPickup = new Pickup(pickupCoords, palette->getRandomColour());
 }
 
 
@@ -138,7 +139,7 @@ static void resetToOrigin() {
 
 static void init(int argc, char *argv[]) {
     Text::init();
-    palette::initColours();
+    palette = Palette::getInstance();
     
     screens = new Screens(width, height);
     world = new World(width/Primitive::DEFAULT_PIXEL_SIZE, height/Primitive::DEFAULT_PIXEL_SIZE);
@@ -150,7 +151,7 @@ static void init(int argc, char *argv[]) {
     glEnable(GL_BLEND);
     glDisable(GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glClearColor(palette::bgColour->getR(), palette::bgColour->getG(), palette::bgColour->getB(), 0);
+    glClearColor(palette->getBgColour()->getR(), palette->getBgColour()->getG(), palette->getBgColour()->getB(), 0);
 }
 
 static int roundUp(int numToRound, int multiple) {

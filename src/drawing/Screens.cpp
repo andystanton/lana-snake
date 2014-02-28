@@ -11,20 +11,20 @@
 #include <string>
 
 Screens::Screens(GLfloat width, GLfloat height) {
-    palette::initColours();
+    palette = Palette::getInstance();
     this->width = width;
     this->height = height;
 }
 
 void Screens::drawParagraph(string text, GLfloat height, GLfloat pixelSize) {
     glPushMatrix();
-    glColor3fv(palette::getPink()->getColour3fv());
+    glColor3fv(palette->getPink()->getColour3fv());
     Text::writeCentredParagraph(text, width, height, pixelSize);
     glPopMatrix();
 }
 
 GLfloat Screens::linebreak(GLfloat height, GLfloat pixelSize) {
-    return height + pixelSize * (alphabet::CHARACTER_HEIGHT + 1.5);
+    return height + pixelSize * (Alphabet::CHARACTER_HEIGHT + 1.5);
 }
 
 void Screens::drawStartScreen(void) {

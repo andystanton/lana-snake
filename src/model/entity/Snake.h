@@ -17,7 +17,7 @@
 #include "Drawable.h"
 #include "Segment.h"
 #include "../../common/Logger.h"
-#include "../../static/palette.h"
+#include "../../drawing/Palette.h"
 
 using namespace std;
 
@@ -45,6 +45,7 @@ private:
     bool changeDirection(Vec2d*);
     Vec2d* direction;
     bool live;
+    Palette * palette;
 };
 
 #endif /* defined(__snake__snake__) */

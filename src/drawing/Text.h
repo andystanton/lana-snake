@@ -12,11 +12,13 @@
 #include <string>
 #include "GLFW/glfw3.h"
 #include "Primitive.h"
-#include "../static/alphabet.h"
+#include "../drawing/Alphabet.h"
 
 using namespace std;
 
 class Text {
+private:
+    static Alphabet * alphabet;
 public:
     static void init();
     static void drawCharacter(char character, GLint pixelSize);
