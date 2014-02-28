@@ -3,7 +3,7 @@ project(lana-snake)
 
 set(lana-snake_VERSION_MAJOR 1)
 set(lana-snake_VERSION_MINOR 0)
-set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+set(CMAKE_CXX_FLAGS "-std=c++11")
 
 # lana-snake
 include_directories(src)
