@@ -1,12 +1,6 @@
 language: cpp
 compiler: clang
 install:
-# libstdc++-4.8-dev
- #   - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
-# clang++-3.2
-#    - sudo add-apt-repository --yes ppa:h-rayflood/llvm
-#    - sudo apt-get -qq update
-#    - sudo apt-get -qq install libstdc++-4.8-dev clang-3.2
 # required x11 and opengl libs
     - sudo apt-get -qq install xorg-dev
     - sudo apt-get -qq install libglu1-mesa-dev
