@@ -1,5 +1,5 @@
 language: cpp
-compiler: clang
+compiler: gcc
 install:
 # libstdc++-4.8-dev
     - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
