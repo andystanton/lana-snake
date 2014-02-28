@@ -1,4 +1,4 @@
-# lana-snake [![Build Status](https://travis-ci.org/andystanton/lana-snake.png?branch=master)](https://travis-ci.org/andystanton/lana-snake)
+# Lana Snake [![Build Status](https://travis-ci.org/andystanton/lana-snake.png?branch=master)](https://travis-ci.org/andystanton/lana-snake)
 
 An implementation of the retro game Snake in C++. I wrote this as a way of learning C++. It makes use of the [GLFW library](http://www.glfw.org) and [CMake](http://www.cmake.org/) to build the project.
 
@@ -33,3 +33,9 @@ cmake . -G {ide_name}
 ```
 
 For more information on CMake's project generators and a full list of supported platforms and IDEs, see the [documentation](http://www.cmake.org/Wiki/CMake_Generator_Specific_Information).
+
+## Controls
+
+ * Left Arrow : Rotate Left
+ * Right Arrow : Rotate Right
+ * Space : Pause
