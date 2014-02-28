@@ -67,12 +67,13 @@ void Logger::log(LOG_LEVEL level, string message) {
         if (logToStd) {
         cout << timestamp.str() << message << endl;
         }
-        
+        /*
         if (logToFile) {
         ofstream fileOut = ofstream("log.txt", fstream::out | fstream::app);
         fileOut << timestamp.str() << message << endl;
         fileOut.close();
         }
+        */
     }
 }
 

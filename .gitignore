@@ -1,5 +1,13 @@
 .DS_Store
-*.xcodeproj/xcuserdata
-*.xcodeproj/project.xcworkspace/xcuserdata
-*.xcodeproj/project.xcworkspace/xcshareddata
-build
+CMakeFiles
+CMakeScripts
+Testing
+CMakeCache.txt
+MakeFile
+CTestTestfile.cmake
+cmake_install.cmake
+install_manifest.txt
+cleanupCMake.sh
+lana-snake
+*.build
+*.xcodeproj
