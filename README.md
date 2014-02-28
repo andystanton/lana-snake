@@ -33,3 +33,9 @@ cmake . -G {ide_name}
 ```
 
 For more information on CMake's project generators and a full list of supported platforms and IDEs, see the [documentation](http://www.cmake.org/Wiki/CMake_Generator_Specific_Information).
+
+## Controls
+
+ * Left Arrow : Rotate Left
+ * Right Arrow : Rotate Right
+ * Space : Pause
