@@ -2,7 +2,7 @@
 
 An implementation of the retro game Snake in C++. I wrote this as a way of learning C++. It makes use of the [GLFW library](http://www.glfw.org) and [CMake](http://www.cmake.org/) to build the project.
 
-![](http://andystanton.github.io/images/lana-snake.png)
+![](http://andystanton.github.io/lana-snake/images/content/1.0/lana-snake.png)
 
 ## Requirements
 
