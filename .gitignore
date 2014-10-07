@@ -11,3 +11,4 @@ cleanupCMake.sh
 lana-snake
 *.build
 *.xcodeproj
+.idea
