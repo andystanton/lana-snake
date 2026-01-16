@@ -1,43 +1,53 @@
-# Lana Snake [![Build Status](https://travis-ci.org/andystanton/lana-snake.svg?branch=master)](https://travis-ci.org/andystanton/lana-snake) [![Stories in Ready](https://badge.waffle.io/andystanton/lana-snake.png?label=ready&title=Ready)](https://waffle.io/andystanton/lana-snake)
+# Lana Snake
 
-An implementation of the retro game Snake in C++. I wrote this as a way of learning C++. It makes use of the [GLFW library](http://www.glfw.org) and [CMake](http://www.cmake.org/) to build the project.
+An implementation of the retro game Snake in C++. I wrote this as a way of learning C++. It uses the [GLFW library](http://www.glfw.org) for windowing and OpenGL for rendering.
 
 ![](http://andystanton.github.io/lana-snake/images/content/1.0/lana-snake.png)
 
 ## Requirements
 
  * A C++11 compiler
- * [CMake >= 2.8](http://www.cmake.org/cmake/resources/software.html)
+ * [CMake >= 3.16](http://www.cmake.org/cmake/resources/software.html)
+ * OpenGL
 
-## Quick Start
+GLFW is fetched automatically during the build.
+
+## Quick Start
 
 Clone the project:
 
 ```sh
-git clone https://github.com/andystanton/lana-snake.git --recursive && cd lana-snake
+git clone https://github.com/andystanton/lana-snake.git && cd lana-snake
 ```
 
-Run the following commands to generate the makefile and build:
+Build and run:
 
 ```sh
-./configure
-make
+make run
 ```
 
-This will create the lana-snake executable in the project directory.
+## Build Commands
 
-## Generating project files for your IDE
+| Command | Description |
+|---------|-------------|
+| `make` | Configure and build |
+| `make run` | Build and run the game |
+| `make clean` | Remove build directory |
 
-Run the following command to generate the project files for your IDE:
+## Generating Project Files for IDEs
+
+Generate project files for your IDE using CMake:
 
 ```sh
-cmake . -G {ide_name}
+cmake -B build -G "Xcode"              # Xcode
+cmake -B build -G "Visual Studio 17"   # Visual Studio 2022
+cmake -B build -G "Ninja"              # Ninja
 ```
 
-For more information on CMake's project generators and a full list of supported platforms and IDEs, see the [documentation](http://www.cmake.org/Wiki/CMake_Generator_Specific_Information).
+See the [CMake documentation](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html) for a full list of generators.
 
 ## Controls
 
- * Left Arrow : Rotate Left
- * Right Arrow : Rotate Right
- * Space : Pause
+ * Arrow Keys : Move
+ * Space : Start / Pause
+ * Escape : Quit

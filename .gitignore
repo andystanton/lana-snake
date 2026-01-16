@@ -12,3 +12,5 @@ lana-snake
 *.build
 *.xcodeproj
 .idea
+build
+lana-snake.app
